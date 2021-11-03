@@ -21,29 +21,16 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            Avanzar(Vector3.forward);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            Avanzar(Vector3.back);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            Avanzar(Vector3.left);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            Avanzar(Vector3.right);
-        }
+        Avanzar();
     }
 
 
 
-    public void Avanzar(Vector3 direccion)
+    private void Avanzar()
     {
-        transform.position += direccion * velocidad * Time.deltaTime;
+        float ejeHorizontal = Input.GetAxisRaw("Horizontal");
+        float ejeVertical = Input.GetAxisRaw("Vertical");
+        transform.Translate(velocidad * Time.deltaTime * new Vector3(ejeHorizontal, 0, ejeVertical));
     }
 }
     

@@ -6,11 +6,11 @@ public class CañonDisparo : MonoBehaviour
 {
 
     public GameObject bala;
-    public float intanciacion = 3f;
+    public float intervalo = 3f;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnBullet", 1f, intanciacion);
+        InvokeRepeating("SpawnBullet", 1f, intervalo);
     }
 
     // Update is called once per frame
