@@ -19,11 +19,10 @@ public class IrHaciaJugador : MonoBehaviour
     void MoveTowards()
     {
         Vector3 posicion = jugador.transform.position - transform.position;
-        Debug.Log(posicion);
-        // if(posicion.x <= 2 || posicion.z <= 2){
-        //     return;
-        // }
-            Vector3 direction = (jugador.transform.position - transform.position).normalized;
-             transform.position += 1.5f * direction * Time.deltaTime;
+        if(posicion.magnitude <= 2){
+            return;
+        }
+        Vector3 direction = (jugador.transform.position - transform.position).normalized;
+        transform.position += 1.5f * direction * Time.deltaTime;
     }
 }
