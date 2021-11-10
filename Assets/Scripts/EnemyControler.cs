@@ -17,25 +17,13 @@ public class EnemyControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetEnemyType(tipoEnemigo);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(enemyType == "observador")
-        {
-            LookPlayer();
-        }
-        if(enemyType == "asechador")
-        {
-            MoveTowards();
-        }
-        if(enemyType == "ambos")
-        {
-            LookPlayer();
-            MoveTowards();
-        }
+        SetEnemyType(tipoEnemigo);
     }
 
     void SetEnemyType(TipoEnemigo tipoEnemigo)
@@ -43,15 +31,14 @@ public class EnemyControler : MonoBehaviour
         switch (tipoEnemigo)
         {
             case TipoEnemigo.observar:
-                enemyType = "observador";
+                LookPlayer();
                 break;
             
             case TipoEnemigo.asechar:
-                enemyType = "asechador";
+                MoveTowards();
                 break;
 
             default:
-                enemyType = "ambos";
                 break;
         }
     }
