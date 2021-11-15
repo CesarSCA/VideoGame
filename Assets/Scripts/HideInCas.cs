@@ -5,7 +5,7 @@ using UnityEngine;
 public class HideInCas : MonoBehaviour
 {
     // Start is called before the first frame update
-    bool hidden = false;
+    public bool hidden = false;
     [SerializeField] GameObject player;
     [SerializeField] GameObject casilleroInterior;
     [SerializeField] GameObject casilleroSalida;

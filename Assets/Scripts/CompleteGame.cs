@@ -22,21 +22,14 @@ public class CompleteGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        completar();
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                Debug.Log(miss[i]);
-            }
-        }
+        CheckIfComplete();
         if(miss[0] == true && miss[1] == true && miss[2] == true && miss[3] == true)
         {
             openDoor();
         }
     }
 
-    void completar()
+    void CheckIfComplete()
     {
         for (int i = 0; i < 4; i++)
         {

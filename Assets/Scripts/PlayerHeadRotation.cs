@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerXRotation : MonoBehaviour
+public class PlayerHeadRotation : MonoBehaviour
 {
     [SerializeField] private float ejeY = 0f;
     [SerializeField] private float ejeX = 0f;
