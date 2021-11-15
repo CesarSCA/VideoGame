@@ -129,13 +129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d68dc5172a91e04cbdef86b6f176311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreJugador: Juan
-  vidasJugador: 3
-  vidaJugador: 100
   velocidad: 2
   velocidadRotacion: 10
   ejeX: 0
-  encogido: 0
+  tablet: {fileID: 0}
+  tabletActiva: 0
+  stamina: 100
 --- !u!65 &5111564097258662362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -370,6 +369,7 @@ GameObject:
   - component: {fileID: 3778978514871095899}
   - component: {fileID: 3778978514871095894}
   - component: {fileID: 3778978514871095897}
+  - component: {fileID: 8472480255826117821}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -440,3 +440,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8472480255826117821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778978514871095898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4336d358ec2033745a616fecbed918d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ejeY: 0
+  ejeX: 0
