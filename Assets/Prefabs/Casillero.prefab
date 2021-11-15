@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe525e0f27028d40a4fa710a6b84ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hidden: 0
   player: {fileID: 3778978514157739199, guid: 06285f1c6260d044785d9d01d012e432, type: 3}
   casilleroInterior: {fileID: 762966848461648302}
   casilleroSalida: {fileID: 4823218658128460051}
@@ -359,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe525e0f27028d40a4fa710a6b84ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hidden: 0
   player: {fileID: 3778978514157739199, guid: 06285f1c6260d044785d9d01d012e432, type: 3}
   casilleroInterior: {fileID: 762966848461648302}
   casilleroSalida: {fileID: 4823218658128460051}

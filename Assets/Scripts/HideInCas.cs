@@ -19,7 +19,7 @@ public class HideInCas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     private void LateUpdate() {
         if(coldDown > 0)
@@ -46,7 +46,7 @@ public class HideInCas : MonoBehaviour
                 {
                     player.transform.localScale = new Vector3(0.9f, 1.5f, 0.9f);
                     hidden = true;
-                    player.transform.position = casilleroInterior.transform.position + new Vector3(0, 0.5f, 0);
+                    player.transform.position = casilleroInterior.transform.position + new Vector3(0, 0.4f, 0);
                     coldDown = 1.5f;
 
                     Debug.Log(hidden);

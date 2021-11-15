@@ -5,36 +5,30 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float velocidad = 2f;
-    public float velocidadRotacion = 10f;
+    public bool hidden;
     [SerializeField] private float ejeX = 0f;
     [SerializeField] private GameObject tablet;
     [SerializeField] private bool tabletActiva = false;
     [SerializeField] private float stamina =  100;
 
 
+
        // Start is called before the first frame update
     void Start()
     {   
+
     }
 
     // Update is called once per frame
     void Update()
     {   
+
+        TabletMostrar();
         Correr();
-        Avanzar();
         Rotar();
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if(tabletActiva == false)
-            {
-                tablet.SetActive(true);
-                tabletActiva = true;
-            } else if(tabletActiva == true)
-            {
-                tablet.SetActive(false);
-                tabletActiva = false;
-            }
-        }
+        Avanzar();
+
+
     }
 
     private void Avanzar()
@@ -75,6 +69,22 @@ public class PlayerController : MonoBehaviour
                 return;
             }
             velocidad = 1.3f;
+        }
+    }
+
+    void TabletMostrar()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if(tabletActiva == false)
+            {
+                tablet.SetActive(true);
+                tabletActiva = true;
+            } else if(tabletActiva == true)
+            {
+                tablet.SetActive(false);
+                tabletActiva = false;
+            }
         }
     }
     
