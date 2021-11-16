@@ -13,7 +13,7 @@ public class HideInCas : MonoBehaviour
 
     void Start()
     {
-        
+        Debug.Log("Presiona 'Q' para ocultar o mostrar la tablet.");
     }
 
     // Update is called once per frame
@@ -29,6 +29,13 @@ public class HideInCas : MonoBehaviour
         if(hidden == true)
         {
             player.transform.position = casilleroInterior.transform.position + new Vector3(0, 0.4f, 0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Presiona 'R' para meterne en el casillero.");
         }
     }
 
