@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float velocidad = 2f;
+    public float velocidadMovimiento = 2.3f;
     public bool hidden;
     [SerializeField] private float ejeX = 0f;
     [SerializeField] private GameObject tablet;
     [SerializeField] private bool tabletActiva = false;
     [SerializeField] private float stamina =  100;
+    private Rigidbody rbPlayer;
+    float ejeHorizontal;
+    float ejeVertical;
+    Vector3 moveDirection;
+    float rbDrag = 6f;
 
 
 
        // Start is called before the first frame update
     void Start()
     {   
-
+        rbPlayer = GetComponent<Rigidbody>();
+        rbPlayer.freezeRotation = true;
     }
 
     // Update is called once per frame
@@ -26,16 +32,28 @@ public class PlayerController : MonoBehaviour
         TabletMostrar();
         Correr();
         Rotar();
+        Inputs();
+        ControlDrag();
+    }
+    void FixedUpdate()
+    {
         Avanzar();
-
-
     }
 
+    void Inputs()
+    {
+        ejeHorizontal = Input.GetAxisRaw("Horizontal");
+        ejeVertical = Input.GetAxisRaw("Vertical");
+        moveDirection = transform.forward * ejeVertical + transform.right * ejeHorizontal;
+    }
+    void ControlDrag()
+    {
+        rbPlayer.drag = rbDrag;
+    }
     private void Avanzar()
     {
-        float ejeHorizontal = Input.GetAxisRaw("Horizontal");
-        float ejeVertical = Input.GetAxisRaw("Vertical");
-        transform.Translate(velocidad * Time.deltaTime * new Vector3(ejeHorizontal, 0, ejeVertical));
+        rbPlayer.AddForce(moveDirection.normalized * velocidadMovimiento * 10, ForceMode.Acceleration);
+
     }
 
     void Rotar()
@@ -52,23 +70,22 @@ public class PlayerController : MonoBehaviour
             stamina -= 2f;
             if(stamina <= 0)
             {
-                velocidad = 1.3f;
+                velocidadMovimiento = 2f;
                 stamina = 0;
                 return;
             }
-            velocidad = 5f;
-            Debug.Log(Mathf.Ceil(Time.deltaTime));
+            velocidadMovimiento = 2.6f;
         }
         if(!Input.GetKey(KeyCode.LeftShift))
         {
             stamina += 1.3f;
             if(stamina >= 100)
             {
-                velocidad = 2f;
+                velocidadMovimiento = 2.3f;
                 stamina = 100;
                 return;
             }
-            velocidad = 1.3f;
+            velocidadMovimiento = 2f;
         }
     }
 

@@ -10,6 +10,7 @@ public class CompleteGame : MonoBehaviour
         bool[] miss = new bool[5];
         [SerializeField] GameObject puerta;
         [SerializeField] float velocidad = 0.5f;
+        bool doorIsOpen = false;
 
     void Start()
     {
@@ -23,8 +24,9 @@ public class CompleteGame : MonoBehaviour
     void Update()
     {   
         CheckIfComplete();
-        if(miss[0] == true && miss[1] == true && miss[2] == true && miss[3] == true)
+        if(miss[0] == true && miss[1] == true && miss[2] == true && miss[3] == true && doorIsOpen == false)
         {
+            doorIsOpen = true;
             openDoor();
         }
     }
@@ -43,7 +45,7 @@ public class CompleteGame : MonoBehaviour
     }
     void openDoor()
     {
-        if(puerta.transform.position.magnitude > 3.3f)
+        if(puerta.transform.position.magnitude > 6.5f)
         {
             return;
         }
