@@ -16,11 +16,15 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDirection;
     float rbDrag = 6f;
 
+    [SerializeField] private GameObject takingSound;
+    [SerializeField] private GameObject backgroundSound;
 
 
        // Start is called before the first frame update
     void Start()
     {   
+        Instantiate(backgroundSound);
+
         rbPlayer = GetComponent<Rigidbody>();
         rbPlayer.freezeRotation = true;
     }
@@ -53,7 +57,6 @@ public class PlayerController : MonoBehaviour
     private void Avanzar()
     {
         rbPlayer.AddForce(moveDirection.normalized * velocidadMovimiento * 10, ForceMode.Acceleration);
-
     }
 
     void Rotar()
@@ -97,10 +100,13 @@ public class PlayerController : MonoBehaviour
             {
                 tablet.SetActive(true);
                 tabletActiva = true;
+                Instantiate(takingSound);
             } else if(tabletActiva == true)
             {
                 tablet.SetActive(false);
                 tabletActiva = false;
+                Instantiate(takingSound);
+
             }
         }
     }

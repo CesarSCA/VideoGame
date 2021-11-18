@@ -13,6 +13,8 @@ public class PlayerMissions : MonoBehaviour
     float timeToComplete = 10f;
 
 
+    [SerializeField] GameObject takingSound;
+
     void Start()
     {
         TextMeshPro texto = tabletsTexto.GetComponent<TextMeshPro>();
@@ -38,6 +40,8 @@ public class PlayerMissions : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other) {
+        
+        Instantiate(takingSound);
 
         if(other.gameObject.CompareTag("Player"))
         {

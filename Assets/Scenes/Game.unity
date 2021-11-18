@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0040872335, g: 0.00022362085, b: 0.00000005727775, a: 1}
+  m_IndirectSpecularColor: {r: 0.0040872376, g: 0.00022362106, b: 0.00000005727775, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -566,7 +566,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3368814763193611558, guid: 430f825cf412f0a4aa9e093bbb326bd9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3368814763193611558, guid: 430f825cf412f0a4aa9e093bbb326bd9, type: 3}
       propertyPath: m_LocalScale.x
@@ -3933,16 +3933,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 468961987}
     - target: {fileID: 3778978514157739196, guid: 06285f1c6260d044785d9d01d012e432, type: 3}
+      propertyPath: takingSound
+      value: 
+      objectReference: {fileID: 5915709560985680886, guid: 05b34c372efe11b458ccd13e378da1d6, type: 3}
+    - target: {fileID: 3778978514157739196, guid: 06285f1c6260d044785d9d01d012e432, type: 3}
       propertyPath: tabletActiva
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3778978514157739196, guid: 06285f1c6260d044785d9d01d012e432, type: 3}
+      propertyPath: footStepsSound
+      value: 
+      objectReference: {fileID: 994564002764837460, guid: d22248cd3cf8a1a49b3a21af13ba5360, type: 3}
+    - target: {fileID: 3778978514157739196, guid: 06285f1c6260d044785d9d01d012e432, type: 3}
+      propertyPath: backgroundSound
+      value: 
+      objectReference: {fileID: 5821003258176328351, guid: 4513fb1efc37e064fb38cd6e5172dd62, type: 3}
     - target: {fileID: 3778978514157739196, guid: 06285f1c6260d044785d9d01d012e432, type: 3}
       propertyPath: velocidadMovimiento
       value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 3778978514157739197, guid: 06285f1c6260d044785d9d01d012e432, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3778978514157739197, guid: 06285f1c6260d044785d9d01d012e432, type: 3}
       propertyPath: m_LocalScale.x
@@ -4976,7 +4988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8831325374522409422, guid: 806a3c6120080ee4eacd926e4d189abc, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8831325374522409422, guid: 806a3c6120080ee4eacd926e4d189abc, type: 3}
       propertyPath: m_LocalScale.x
